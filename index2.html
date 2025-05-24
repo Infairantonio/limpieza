@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liansur - Professional Cleaning Services</title>
+
+    <!-- Tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <a id="inicio"></a> <!-- Punto de anclaje superior -->
+
+    <!-- ===================== -->
+    <!-- Navbar -->
+    <!-- ===================== -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" alt="Logo Liansur" height="60">
+            </a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5 fw-semibold" href="#servicios">
+                            <i class="fas fa-broom me-1"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5 fw-semibold" href="#galeria">
+                            <i class="fas fa-images me-1"></i> Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5 fw-semibold" href="#acerca">
+                            <i class="fas fa-info-circle me-1"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5 fw-semibold" href="#tarifas">
+                            <i class="fas fa-euro-sign me-1"></i> Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5 fw-semibold" href="#contacto">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <!-- Botón para cambiar tema -->
+                <button id="temaToggleBtn" class="btn btn-outline-light ms-3" aria-label="Cambiar tema">
+                    🌙 Dark Mode
+                </button>
+                <!-- Enlace para idioma -->
+                <a href="index.html" class="btn btn-outline-light ms-2" aria-label="Change language">
+                    🌐 ES
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== -->
+    <!-- Hero con video de fondo -->
+    <!-- ===================== -->
+    <header class="hero-section position-relative">
+        <!-- Video para escritorio -->
+        <video autoplay loop playsinline muted class="hero-video video-desktop">
+            <source src="video/intro1.mp4" type="video/mp4" />
+        </video>
+        <!-- Video para móvil -->
+        <video autoplay loop playsinline muted class="hero-video video-mobile d-block d-md-none">
+            <source src="video/intro1.mp4" type="video/mp4" />
+        </video>
+        <!-- Overlay con mensaje -->
+        <div
+            class="hero-overlay position-absolute top-0 start-0 w-100 h-100 z-2 d-flex align-items-center justify-content-center text-center">
+            <p id="mensajeUnico" class="display-1 fw-bold text-uppercase text-white animate__animated d-none"
+                style="text-shadow: 0 0 30px #000; letter-spacing: 5px;"></p>
+        </div>
+    </header>
+
+    <!-- ===================== -->
+    <!-- Sección Servicios -->
+    <!-- ===================== -->
+    <section id="servicios" class="section-animated" aria-labelledby="titulo-servicios">
+        <div class="container">
+            <h2 id="titulo-servicios" class="seccion-titulo animate__animated animate__fadeInUp">
+                Services We Offer
+            </h2>
+            <div class="row justify-content-center">
+
+                <!-- General Cleaning -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center">
+                        <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Animated mop" role="img">
+                            <title>Cleaning mop</title>
+                            <desc>Icono decorativo animado representando una mopa girando</desc>
+                            <g transform="rotate(0 32 32)">
+                                <animateTransform attributeName="transform" type="rotate"
+                                    values="-10 32 32;10 32 32;-10 32 32" dur="1.5s" repeatCount="indefinite" />
+                                <rect x="30" y="10" width="4" height="30" fill="#007bff" rx="1" />
+                                <path d="M20 40 Q32 50 44 40 Q32 60 20 40 Z" fill="#007bff" />
+                            </g>
+                        </svg>
+                        <h3>General Cleaning</h3>
+                        <p>Cleaning services for homes and offices, using eco-friendly products.</p>
+                        <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
+                            data-bs-target="#modalLimpiezaGeneral" aria-label="Read more about general cleaning">
+                            Read more...
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Disinfection -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center">
+                        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Animated spray" role="img">
+                            <title>Cleaning spray</title>
+                            <desc>Spray con burbujas simulando pulverización</desc>
+                            <rect x="35" y="40" width="30" height="45" rx="6" fill="#007bff" />
+                            <rect x="40" y="30" width="20" height="10" rx="2" fill="#007bff" />
+                            <circle cx="50" cy="65" r="10" fill="#ffffff" />
+                            <circle cx="70" cy="35" r="3" fill="#007bff">
+                                <animate attributeName="cy" values="35;25;35" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="75" cy="30" r="2.5" fill="#007bff">
+                                <animate attributeName="cy" values="30;20;30" dur="1.2s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="80" cy="35" r="2" fill="#007bff">
+                                <animate attributeName="cy" values="35;25;35" dur="0.9s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                        <h3>Disinfection</h3>
+                        <p>Professional elimination of viruses and bacteria in enclosed spaces.</p>
+                        <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
+                            data-bs-target="#modalDesinfeccion" aria-label="Read more about disinfection">
+                            Read more...
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Garden Maintenance -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
+                            aria-label="Animated blue flower" role="img" class="animated-flower">
+                            <g transform="rotate(0 32 32)">
+                                <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                                    values="-3 32 32;3 32 32;-3 32 32" dur="3s" repeatCount="indefinite"
+                                    additive="sum" />
+                                <!-- Pétalos -->
+                                <circle cx="32" cy="16" r="8" fill="#4da6ff" />
+                                <circle cx="32" cy="48" r="8" fill="#4da6ff" />
+                                <circle cx="16" cy="32" r="8" fill="#4da6ff" />
+                                <circle cx="48" cy="32" r="8" fill="#4da6ff" />
+                                <circle cx="22" cy="22" r="8" fill="#4da6ff" />
+                                <circle cx="42" cy="22" r="8" fill="#4da6ff" />
+                                <circle cx="22" cy="42" r="8" fill="#4da6ff" />
+                                <circle cx="42" cy="42" r="8" fill="#4da6ff" />
+                                <!-- Centro -->
+                                <circle cx="32" cy="32" r="6" fill="#0055aa" />
+                            </g>
+                        </svg>
+                        <h3>Garden Maintenance</h3>
+                        <p>Care and cleaning of gardens and green areas throughout the year.</p>
+                        <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
+                            data-bs-target="#modalJardines" aria-label="Read more about garden maintenance">
+                            Read more...
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Industrial Cleaning -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
+                            aria-label="Animated industrial building" role="img" class="mb-2">
+                            <!-- Techo animado -->
+                            <polygon points="32,10 10,24 54,24" fill="#005fa3">
+                                <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0"
+                                    dur="2s" repeatCount="indefinite" />
+                            </polygon>
+                            <!-- Cuerpo del edificio -->
+                            <rect x="10" y="24" width="44" height="30" rx="2" fill="#0077cc" />
+                            <!-- Puerta central -->
+                            <rect x="26" y="34" width="12" height="20" fill="#ffffff" />
+                            <!-- Ventanas laterales -->
+                            <rect x="14" y="34" width="6" height="10" fill="#ffffff" />
+                            <rect x="44" y="34" width="6" height="10" fill="#ffffff" />
+                        </svg>
+                        <h3>Industrial Cleaning</h3>
+                        <p>Special treatments for garages, warehouses, and large surfaces.</p>
+                        <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
+                            data-bs-target="#modalIndustrial" aria-label="Read more about industrial cleaning">
+                            Read more...
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Sección Galería -->
+    <!-- ===================== -->
+    <section id="galeria" class="py-5 bg-light section-animated">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;">Our Gallery</h2>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                        <img src="img/espaciosRelucientes.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Shiny and cozy spaces" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/espaciosRelucientes.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Shiny and cozy spaces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                        <img src="img/ordenYLimpieza.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Order and cleanliness" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/ordenYLimpieza.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Order and cleanliness in every corner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                        <img src="img/eficienciaGarantizada.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Guaranteed efficiency" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/eficienciaGarantizada.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Efficiency always guaranteed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                        <img src="img/limpiezaprecisa.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Precise cleaning" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/limpiezaprecisa.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Precise and detailed cleaning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                        <img src="img/cuidadoMeticuloso.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Meticulous care" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/cuidadoMeticuloso.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Meticulous care in every task</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                        <img src="img/EspaciosImpecables.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Impeccable spaces" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/EspaciosImpecables.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Impeccable and organized spaces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                        <img src="img/solucionesEfectivas.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Effective solutions" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/solucionesEfectivas.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Effective solutions for every client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                        <img src="img/detallesCuidados.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Carefully attended details" tabindex="0" data-bs-toggle="modal"
+                            data-bs-target="#imageModal" data-img="img/detallesCuidados.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Carefully attended details</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                        <img src="img/higieneSuperior.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Superior hygiene" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/higieneSuperior.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Superior hygiene and pest control</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                        <img src="img/excelenciaLimpieza.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Excellence in industrial cleaning" tabindex="0" data-bs-toggle="modal"
+                            data-bs-target="#imageModal" data-img="img/excelenciaLimpieza.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Excellence in industrial cleaning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                        <img src="img/ambientesPuros.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Pure and healthy environments" tabindex="0" data-bs-toggle="modal"
+                            data-bs-target="#imageModal" data-img="img/ambientesPuros.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Pure and healthy environments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                        <img src="img/limpiezaGarajes.webp" class="card-img-top img-fluid gallery-click"
+                            alt="Garage cleaning" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            data-img="img/limpiezaGarajes.webp">
+                        <div class="card-body text-center">
+                            <p class="card-text fw-semibold">Specialized garage cleaning</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- Sección Acerca de -->
+    <!-- ===================== -->
+    <section id="acerca" class="py-5 bg-success text-white text-center">
+        <div class="container">
+            <h2 class="text-center mb-5">About Liansur</h2>
+            <p class="fs-5">
+                At Liansur, we specialize in providing comprehensive professional cleaning solutions for homes,
+                businesses, and industries. Our team combines experience, commitment, and technology to ensure spotless
+                and healthy spaces.
+            </p>
+            <p class="fs-6 mt-3 fst-italic">"We take care of your environment as if it were our own"</p>
+
+            <!-- Sello animado en canvas (script2.js) -->
+            <div class="my-5">
+                <canvas id="selloGarantia" width="250" height="250"></canvas>
+                <p class="mt-2 fw-bold text-white">100% Guaranteed Cleaning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Sección Tarifas -->
+    <!-- ===================== -->
+    <section id="tarifas" class="py-5 bg-light">
+        <div class="container">
+            <!-- Título con ícono -->
+            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;">
+                <i class="fas fa-euro-sign me-2"></i>Service Rates
+            </h2>
+            <div class="table-responsive animate__animated animate__fadeInUp animate__delay-1s">
+                <table class="table table-bordered table-hover text-center align-middle">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Service</th>
+                            <th class="d-none d-md-table-cell">Duration</th>
+                            <th class="d-none d-lg-table-cell">Includes</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>General Cleaning</td>
+                            <td class="d-none d-md-table-cell">2 hours</td>
+                            <td class="d-none d-lg-table-cell">Bathrooms, kitchen, floors</td>
+                            <td>€30</td>
+                        </tr>
+                        <tr>
+                            <td>Disinfection</td>
+                            <td class="d-none d-md-table-cell">1 hour</td>
+                            <td class="d-none d-lg-table-cell">Nebulization and ozone</td>
+                            <td>€40</td>
+                        </tr>
+                        <tr>
+                            <td>Gardens</td>
+                            <td class="d-none d-md-table-cell">3 hours</td>
+                            <td class="d-none d-lg-table-cell">Pruning, watering, cleaning</td>
+                            <td>€50</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial Cleaning</td>
+                            <td class="d-none d-md-table-cell">4 hours</td>
+                            <td class="d-none d-lg-table-cell">Garages and machinery</td>
+                            <td>€75</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Sección Contacto -->
+    <!-- ===================== -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Us</h2>
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="nombre" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidos" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="apellidos" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="telefono" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tipoServicio" class="form-label">Type of Service</label>
+                        <select id="tipoServicio" class="form-select">
+                            <option>General Cleaning</option>
+                            <option>Gardens</option>
+                            <option>Industrial</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fecha" class="form-label">Preferred Date</label>
+                        <input type="date" class="form-control" id="fecha" />
+                    </div>
+                    <div class="col-12">
+                        <label for="mensaje" class="form-label">Message</label>
+                        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <button type="submit" class="btn btn-success px-5">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Footer -->
+    <!-- ===================== -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Liansur - All rights reserved</p>
+            <div class="mb-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== -->
+    <!-- Modales de Servicio -->
+    <!-- ===================== -->
+    <!-- General Cleaning Modal -->
+    <div class="modal fade" id="modalLimpiezaGeneral" tabindex="-1" aria-labelledby="modalLimpiezaGeneralLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg animate__animated animate__zoomIn">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title" id="modalLimpiezaGeneralLabel">General Cleaning</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Services aimed at homes and offices. We use eco-friendly products that protect health and the
+                        environment. Ideal for maintaining a safe and pleasant environment on a regular basis.</p>
+                    <ul>
+                        <li>🧼 Furniture and floor cleaning</li>
+                        <li>🌱 Eco-friendly products</li>
+                        <li>🗓️ Flexible frequency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disinfection Modal -->
+    <div class="modal fade" id="modalDesinfeccion" tabindex="-1" aria-labelledby="modalDesinfeccionLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg animate__animated animate__zoomIn">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title" id="modalDesinfeccionLabel">Disinfection</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>We eliminate viruses, bacteria, and pathogens in homes, offices, clinics, and educational
+                        centers, ensuring safer environments for everyone.</p>
+                    <ul>
+                        <li>🦠 Nebulization and ozone</li>
+                        <li>🧪 Certified virucidal products</li>
+                        <li>🚪 High-touch surfaces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Garden Maintenance Modal -->
+    <div class="modal fade" id="modalJardines" tabindex="-1" aria-labelledby="modalJardinesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg animate__animated animate__zoomIn">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title" id="modalJardinesLabel">Garden Maintenance</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>We keep your gardens clean, green, and well maintained. Our team handles watering, pruning,
+                        cleaning, and pest control.</p>
+                    <ul>
+                        <li>🌳 Tree and hedge pruning and maintenance</li>
+                        <li>💧 Automated watering</li>
+                        <li>🐛 Eco-friendly pest control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industrial Cleaning Modal -->
+    <div class="modal fade" id="modalIndustrial" tabindex="-1" aria-labelledby="modalIndustrialLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg animate__animated animate__zoomIn">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title" id="modalIndustrialLabel">Industrial Cleaning</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>We specialize in cleaning large areas such as garages, industrial warehouses, or logistics
+                        centers. We use professional equipment to ensure optimal results.</p>
+                    <ul>
+                        <li>🏭 Garage and factory cleaning</li>
+                        <li>🧯 Hard-to-reach areas</li>
+                        <li>🚜 Specialized equipment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para galería -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Preview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img id="modalImage" src="" class="img-fluid rounded-bottom" alt="Preview" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/34600111222" class="whatsapp-float" id="btnWhatsApp" target="_blank"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón silenciar/activar sonido -->
+    <button id="toggleMuteBtn" class="mute-btn" aria-label="Toggle sound">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <!-- Botón subir arriba -->
+    <a href="#inicio" id="btnScrollTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ===================== -->
+    <!-- Scripts -->
+    <!-- ===================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script2.js"></script>
+    <!-- Script for keyboard accessibility -->
+    <script>
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.setAttribute('tabindex', '0');
+            img.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    img.click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

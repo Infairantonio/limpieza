@@ -1,0 +1,803 @@
+/* ===================== */
+/* Fuente principal y configuración base */
+/* ===================== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  color: #002b5c;
+}
+
+/* ===================== */
+/* preloader */
+/* ===================== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0077cc;
+  animation: fadeInOut 1.5s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+/* ===================== */
+/* Hero con video de fondo */
+/* ===================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Video escritorio visible por defecto */
+.video-desktop {
+  display: block;
+}
+
+/* Video móvil oculto por defecto */
+.video-mobile {
+  display: none;
+}
+
+/* ===================== */
+/* Overlay encima del video */
+/* ===================== */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 43, 92, 0.4);
+  z-index: 2;
+}
+
+/* ===================== */
+/* Botón inferior izquierdo para mute */
+/* ===================== */
+/* Botón de sonido circular fijo */
+.mute-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #ffcc00;
+  color: #002b5c;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.mute-btn:hover {
+  transform: scale(1.1);
+  background-color: #f1b800;
+}
+
+body.tema-oscuro .mute-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+/* ===================== */
+/* Navbar moderna */
+/* ===================== */
+.custom-navbar {
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.custom-navbar .nav-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #e8f5e9 !important;
+  transform: translateY(-2px);
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #ffffff !important;
+  letter-spacing: 2px;
+}
+
+.custom-navbar .nav-link i {
+  transition: transform 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover i {
+  transform: scale(1.8); /* Aumenta bastante el tamaño */
+}
+
+/* Aplica la animación al logo */
+.navbar-brand img {
+  animation: balanceo 2s ease-in-out infinite;
+  transform-origin: center; /* Punto de rotación centrado */
+}
+
+/* Animación tipo péndulo */
+@keyframes balanceo {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===================== */
+/* Botones */
+/* ===================== */
+.btn-light {
+  background-color: #ffffff;
+  color: #0077cc;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: scale(1.05);
+  background-color: #e6f7ff;
+}
+
+/* ===================== */
+/* Sección Servicios */
+/* ===================== */
+#servicios {
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  padding: 100px 0;
+  text-align: center;
+}
+
+#servicios h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #0077cc;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #cceeff;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 119, 204, 0.2);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: #0077cc;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ===================== */
+/* Sección Galería */
+/* ===================== */
+#galeria h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0077cc;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 119, 204, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Galería - fondos variados para cada tarjeta */
+.bg-variant-1 .card-body {
+  background-color: #e8f5e9;
+  border-top: 2px solid #66bb6a;
+}
+.bg-variant-2 .card-body {
+  background-color: #f1f8e9;
+  border-top: 2px solid #aed581;
+}
+.bg-variant-3 .card-body {
+  background-color: #e0f2f1;
+  border-top: 2px solid #4db6ac;
+}
+.bg-variant-4 .card-body {
+  background-color: #fff3e0;
+  border-top: 2px solid #ffb74d;
+}
+.bg-variant-5 .card-body {
+  background-color: #fce4ec;
+  border-top: 2px solid #f06292;
+}
+.bg-variant-6 .card-body {
+  background-color: #ede7f6;
+  border-top: 2px solid #9575cd;
+}
+
+.gallery-item .card-text {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gallery-item:hover .card-text {
+  transform: scale(1.05);
+  color: #1b5e20;
+}
+
+/* ===================== */
+/* Sección Acerca de */
+/* ===================== */
+#acerca {
+  background: linear-gradient(135deg, #a5d6a7, #c8e6c9);
+  color: #004d40;
+  padding: 80px 0;
+}
+
+#acerca h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0077cc;
+}
+
+#acerca p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===================== */
+/* Sección Contacto */
+/* ===================== */
+#contacto {
+  background: #f1f8e9;
+  padding: 80px 0;
+}
+
+#contacto h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0077cc;
+}
+
+#contacto .form-label {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+#contacto .form-control,
+#contacto .form-select {
+  border-radius: 10px;
+  border: 1px solid #c8e6c9;
+  padding: 0.75rem;
+}
+
+/* ===================== */
+/* Footer */
+/* ===================== */
+footer {
+  background: #1b5e20;
+  color: white;
+}
+
+footer a {
+  color: #a5d6a7;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer .btn-outline-light {
+  border-color: #a5d6a7;
+  color: #a5d6a7;
+}
+
+footer .btn-outline-light:hover {
+  background-color: #a5d6a7;
+  color: #1b5e20;
+}
+
+/* ===================== */
+/* Animaciones globales */
+/* ===================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-animated {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* ===================== */
+/* Responsive */
+/* ===================== */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .fs-4 {
+    font-size: 1.2rem;
+  }
+}
+
+.service-card .btn {
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.service-card .btn:hover {
+  transform: scale(1.05);
+}
+
+#selloGarantia {
+  display: block;
+  margin: 2rem auto;
+  background: radial-gradient(circle, #c8e6c9 0%, #a5d6a7 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 255, 100, 0.3);
+}
+
+@media (max-width: 768px) {
+  .video-desktop {
+    display: none !important;
+    z-index: 0 !important;
+  }
+
+  .video-mobile {
+    display: block !important;
+    z-index: 1 !important;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  display: none; /* oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebea5;
+}
+
+.seccion-titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0077cc;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin: 0 auto 50px;
+}
+
+.seccion-titulo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  background-color: #25d366;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.seccion-titulo:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ==============================================================================*/
+
+/* ============================= */
+/* TEMA OSCURO GLOBAL Y REFINADO */
+/* ============================= */
+body.tema-oscuro {
+  background-color: #121212;
+  color: #eeeeee;
+}
+
+/* ============================= */
+/* TEXTOS Y TÍTULOS */
+/* ============================= */
+body.tema-oscuro h1,
+body.tema-oscuro h2,
+body.tema-oscuro h3,
+body.tema-oscuro p,
+body.tema-oscuro .card-text,
+body.tema-oscuro label,
+body.tema-oscuro .form-label,
+body.tema-oscuro .seccion-titulo {
+  color: #eeeeee !important;
+}
+
+body.tema-oscuro .seccion-titulo::after {
+  background-color: #66ccff !important;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+body.tema-oscuro .custom-navbar {
+  background: linear-gradient(90deg, #1e1e1e, #2a2a2a);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.tema-oscuro .custom-navbar .nav-link {
+  color: #dddddd !important;
+}
+
+body.tema-oscuro .custom-navbar .nav-link:hover {
+  color: #66ccff !important;
+}
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+body.tema-oscuro .btn {
+  border: none;
+}
+
+body.tema-oscuro .btn-outline-light {
+  border-color: #bbbbbb;
+  color: #ffffff;
+}
+
+body.tema-oscuro .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.tema-oscuro .btn-success {
+  background-color: #66ccff !important;
+  color: #121212 !important;
+  box-shadow: 0 0 10px rgba(102, 204, 255, 0.3);
+}
+
+body.tema-oscuro .btn-success:hover {
+  background-color: #4bbbe6 !important;
+}
+
+body.tema-oscuro .btn-warning,
+body.tema-oscuro .btn-primary,
+body.tema-oscuro .btn-outline-success:hover {
+  filter: brightness(90%);
+  color: #fff;
+}
+
+body.tema-oscuro #toggleMuteBtn {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+/* ============================= */
+/* WHATSAPP FLOATING BUTTON */
+/* ============================= */
+body.tema-oscuro .whatsapp-float {
+  background-color: #0d4b40;
+  color: #ffffff;
+  border: 2px solid #25d366;
+}
+
+body.tema-oscuro .whatsapp-float:hover {
+  background-color: #1ebea5;
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+body.tema-oscuro .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+body.tema-oscuro #mensajeUnico {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(102, 204, 255, 0.6);
+}
+
+/* ============================= */
+/* SECCIONES GENERALES */
+/* ============================= */
+body.tema-oscuro section,
+body.tema-oscuro header,
+body.tema-oscuro #acerca,
+body.tema-oscuro #servicios,
+body.tema-oscuro #contacto {
+  background-color: #1a1a1a !important;
+}
+
+body.tema-oscuro #acerca {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a) !important;
+}
+
+body.tema-oscuro #acerca p.fst-italic {
+  color: #bbbbbb !important;
+}
+
+body.tema-oscuro #acerca .fw-bold {
+  color: #66ccff !important;
+}
+
+/* ============================= */
+/* SECCIÓN SERVICIOS */
+/* ============================= */
+body.tema-oscuro #servicios {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a) !important;
+}
+
+body.tema-oscuro #servicios .seccion-titulo {
+  color: #66ccff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+body.tema-oscuro #servicios h3,
+body.tema-oscuro #servicios p {
+  color: #eeeeee !important;
+}
+
+body.tema-oscuro #servicios .service-card {
+  background-color: #232323;
+  border-color: #444;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.tema-oscuro #servicios .btn-outline-success {
+  border-color: #66ccff;
+  color: #66ccff;
+}
+
+body.tema-oscuro #servicios .btn-outline-success:hover {
+  background-color: #66ccff;
+  color: #000;
+}
+
+/* ============================= */
+/* FORMULARIOS */
+/* ============================= */
+body.tema-oscuro .form-control,
+body.tema-oscuro .form-select,
+body.tema-oscuro input,
+body.tema-oscuro textarea,
+body.tema-oscuro select {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+body.tema-oscuro input::placeholder,
+body.tema-oscuro textarea::placeholder {
+  color: #999;
+}
+
+body.tema-oscuro input:focus,
+body.tema-oscuro select:focus,
+body.tema-oscuro textarea:focus {
+  border-color: #66ccff;
+  box-shadow: 0 0 0 0.2rem rgba(102, 204, 255, 0.25);
+}
+
+body.tema-oscuro #contacto h2,
+body.tema-oscuro #contacto label {
+  color: #66ccff !important;
+}
+
+body.tema-oscuro #contacto .form-control::placeholder,
+body.tema-oscuro #contacto .form-select::placeholder,
+body.tema-oscuro #contacto textarea::placeholder {
+  color: #aaa;
+}
+
+/* ============================= */
+/* TARJETAS, GALERÍA, MODALES, TABLAS */
+/* ============================= */
+body.tema-oscuro .card,
+body.tema-oscuro .card-body,
+body.tema-oscuro .gallery-item,
+body.tema-oscuro .modal-content,
+body.tema-oscuro .modal-header,
+body.tema-oscuro .modal-body,
+body.tema-oscuro .table,
+body.tema-oscuro th,
+body.tema-oscuro td {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border-color: #333333;
+}
+
+body.tema-oscuro .modal-header {
+  background-color: #222;
+  color: #66ccff;
+  border-bottom: 1px solid #444;
+}
+
+body.tema-oscuro .modal-footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #444;
+}
+
+body.tema-oscuro .modal-body img {
+  filter: brightness(0.9) contrast(1.1);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Variantes de galería */
+body.tema-oscuro .bg-variant-1 .card-body,
+body.tema-oscuro .bg-variant-2 .card-body,
+body.tema-oscuro .bg-variant-3 .card-body,
+body.tema-oscuro .bg-variant-4 .card-body,
+body.tema-oscuro .bg-variant-5 .card-body,
+body.tema-oscuro .bg-variant-6 .card-body {
+  background-color: #222 !important;
+  border-top-color: #555 !important;
+}
+
+/* ============================= */
+/* CANVAS */
+/* ============================= */
+body.tema-oscuro canvas,
+body.tema-oscuro #acerca canvas {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 30px rgba(102, 204, 255, 0.2);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+body.tema-oscuro footer {
+  background: #111111;
+  color: #dddddd;
+}
+body.tema-oscuro footer a {
+  color: #66ccff;
+}
+body.tema-oscuro footer a:hover {
+  color: #ffffff;
+}
+body.tema-oscuro footer .btn-outline-light {
+  border-color: #888888;
+  color: #cccccc;
+}
+body.tema-oscuro footer .btn-outline-light:hover {
+  background-color: #cccccc;
+  color: #111111;
+}
+
+#btnScrollTop {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: #0077cc;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease;
+}
+
+.service-card svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -20,29 +20,38 @@
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+
     <!-- AOS CSS (estilos de las animaciones) -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!--
+Este bloque de estilos soluciona problemas visuales relacionados con el desplazamiento horizontal (scroll lateral no deseado) 
+y mejora el comportamiento de las animaciones AOS. También ajusta la barra de navegación para evitar que se desborde horizontalmente.
+-->
     <style>
+        /* Evita el scroll horizontal en toda la página */
         html,
         body {
             overflow-x: hidden !important;
         }
 
+        /* Mejora la representación de las animaciones AOS */
         [data-aos] {
             backface-visibility: hidden;
+            /* Evita parpadeos durante la animación */
             transform-style: preserve-3d;
+            /* Mantiene las transformaciones 3D suaves */
         }
 
+        /* Evita que la navbar cree desbordamiento horizontal */
         .navbar {
             overflow-x: hidden;
         }
     </style>
-</head>
+
 
 <body>
 

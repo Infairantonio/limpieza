@@ -27,21 +27,31 @@
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!--
+Este bloque de estilos soluciona problemas visuales relacionados con el desplazamiento horizontal (scroll lateral no deseado) 
+y mejora el comportamiento de las animaciones AOS. También ajusta la barra de navegación para evitar que se desborde horizontalmente.
+-->
     <style>
+        /* Evita el scroll horizontal en toda la página */
         html,
         body {
             overflow-x: hidden !important;
         }
 
+        /* Mejora la representación de las animaciones AOS */
         [data-aos] {
             backface-visibility: hidden;
+            /* Evita parpadeos durante la animación */
             transform-style: preserve-3d;
+            /* Mantiene las transformaciones 3D suaves */
         }
 
+        /* Evita que la navbar cree desbordamiento horizontal */
         .navbar {
             overflow-x: hidden;
         }
     </style>
+
 
 
 </head>
@@ -542,13 +552,23 @@
         <div class="container">
             <p class="mb-1">&copy; 2025 Liansur - Todos los derechos reservados</p>
             <div class="mb-2">
-                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/tuempresa" target="_blank" class="text-white me-3">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/tuempresa" target="_blank" class="text-white me-3">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/tuempresa" target="_blank" class="text-white me-3">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/tuempresa" target="_blank" class="text-white">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
         </div>
     </footer>
+
+
 
     <!-- ===================== -->
     <!-- Modales de Servicio -->

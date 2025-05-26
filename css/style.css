@@ -34,10 +34,14 @@ body {
 }
 
 @keyframes fadeInOut {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
-
 
 /* ===================== */
 /* Hero con video de fondo */
@@ -381,6 +385,32 @@ footer .btn-outline-light {
 footer .btn-outline-light:hover {
   background-color: #a5d6a7;
   color: #1b5e20;
+}
+
+/* ============================= */
+/* ANIMACIÓN ICONOS REDES SOCIALES EN FOOTER */
+/* ============================= */
+
+/* Animación tipo "rebote" (bounce) que eleva ligeramente el icono */
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: translateY(0); /* Estado inicial y final: sin desplazamiento */
+  }
+  50% {
+    transform: translateY(-5px); /* En el punto medio: sube 5 píxeles */
+  }
+}
+
+/* Iconos sociales en el footer (FontAwesome) */
+footer .fab {
+  transition: transform 0.3s ease, color 0.3s ease; /* Suaviza el cambio de posición y color */
+}
+
+/* Efecto al pasar el ratón sobre los iconos */
+footer .fab:hover {
+  animation: iconBounce 0.6s ease; /* Aplica la animación de rebote */
+  color: #66ccff; /* Cambia el color del icono al azul claro */
 }
 
 /* ===================== */
@@ -801,4 +831,3 @@ body.tema-oscuro footer .btn-outline-light:hover {
   margin-left: auto;
   margin-right: auto;
 }
-

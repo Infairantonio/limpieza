@@ -21,7 +21,7 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- AOS CSS -->
+    <!-- AOS CSS (estilos de las animaciones) -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 
     <!-- Estilos personalizados -->
@@ -103,7 +103,7 @@
         <!-- Overlay con contenido -->
         <div
             class="hero-overlay position-absolute top-0 start-0 w-100 h-100 z-2 d-flex align-items-center justify-content-center text-center">
-            <p id="mensajeUnico" class="display-1 fw-bold text-uppercase text-white animate__animated d-none"
+            <p id="mensajeUnico" class="display-2 fw-bold text-uppercase text-white animate__animated d-none"
                 style="text-shadow: 0 0 30px #000; letter-spacing: 5px;"></p>
         </div>
     </header>
@@ -111,38 +111,39 @@
     <!-- ===================== -->
     <!-- Sección Servicios -->
     <!-- ===================== -->
-    <section id="servicios" class="py-5" data-aos="fade-up" data-aos-delay="100" aria-labelledby="titulo-servicios">
+    <section id="servicios" class="section-animated" aria-labelledby="titulo-servicios">
         <div class="container">
-            <h2 id="titulo-servicios" class="seccion-titulo mb-4" data-aos="fade-up" data-aos-delay="200">
+            <h2 id="titulo-servicios" class="seccion-titulo animate__animated animate__fadeInUp">
                 Servicios que ofrecemos
             </h2>
-            <div class="row justify-content-center g-4">
+            <div class="row justify-content-center">
 
                 <!-- Limpieza General -->
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-card text-center p-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                             aria-label="Mopa animada" role="img">
                             <title>Mopa de limpieza</title>
                             <desc>Icono decorativo animado que representa una mopa girando ligeramente</desc>
                             <g transform="rotate(0 32 32)">
                                 <animateTransform attributeName="transform" type="rotate"
-                                    values="-10 32 32;10 32 32;-10 32 32" dur="1.5s" repeatCount="indefinite" />
+                                    values="-1F0 32 32;10 32 32;-10 32 32" dur="1.5s" repeatCount="indefinite" />
                                 <rect x="30" y="10" width="4" height="30" fill="#007bff" rx="1" />
                                 <path d="M20 40 Q32 50 44 40 Q32 60 20 40 Z" fill="#007bff" />
                             </g>
                         </svg>
-                        <h3 class="mt-3">Limpieza General</h3>
+                        <h3>Limpieza General</h3>
                         <p>Servicios de limpieza para hogares y oficinas, con productos ecológicos.</p>
                         <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
-                            data-bs-target="#modalLimpiezaGeneral" aria-label="Leer más sobre limpieza general">Leer
-                            más...</button>
+                            data-bs-target="#modalLimpiezaGeneral" aria-label="Leer más sobre limpieza general">
+                            Leer más...
+                        </button>
                     </div>
                 </div>
 
                 <!-- Desinfección -->
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-card text-center p-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                             aria-label="Spray animado" role="img">
                             <title>Spray de limpieza</title>
@@ -163,22 +164,23 @@
                                 <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
                             </circle>
                         </svg>
-                        <h3 class="mt-3">Desinfección</h3>
+                        <h3>Desinfección</h3>
                         <p>Eliminación profesional de virus y bacterias en espacios cerrados.</p>
                         <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
-                            data-bs-target="#modalDesinfeccion" aria-label="Leer más sobre desinfección">Leer
-                            más...</button>
+                            data-bs-target="#modalDesinfeccion" aria-label="Leer más sobre desinfección">
+                            Leer más...
+                        </button>
                     </div>
                 </div>
 
                 <!-- Mantenimiento de Jardines -->
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="service-card text-center p-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img"
-                            aria-label="Flor azul animada">
+                            aria-label="Flor azul animada" class="animated-flower">
                             <g transform="rotate(0 32 32)">
                                 <animateTransform attributeName="transform" attributeType="XML" type="rotate"
-                                    values="-3 32 32;3 32 32;-3 32 32" dur="3s" repeatCount="indefinite" />
+                                    values="-3 32 32; 3 32 32; -3 32 32" dur="3s" repeatCount="indefinite" />
                                 <circle cx="32" cy="16" r="8" fill="#4da6ff" />
                                 <circle cx="32" cy="48" r="8" fill="#4da6ff" />
                                 <circle cx="16" cy="32" r="8" fill="#4da6ff" />
@@ -190,21 +192,22 @@
                                 <circle cx="32" cy="32" r="6" fill="#0055aa" />
                             </g>
                         </svg>
-                        <h3 class="mt-3">Mantenimiento de Jardines</h3>
+                        <h3>Mantenimiento de Jardines</h3>
                         <p>Cuidado y limpieza de jardines y zonas verdes durante todo el año.</p>
                         <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
-                            data-bs-target="#modalJardines" aria-label="Leer más sobre mantenimiento de jardines">Leer
-                            más...</button>
+                            data-bs-target="#modalJardines" aria-label="Leer más sobre mantenimiento de jardines">
+                            Leer más...
+                        </button>
                     </div>
                 </div>
 
                 <!-- Limpieza Industrial -->
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="service-card text-center p-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img"
-                            aria-label="Nave industrial animada">
+                            aria-label="Nave industrial animada" class="mb-2">
                             <polygon id="techo" points="32,10 10,24 54,24" fill="#005fa3">
-                                <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0"
+                                <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0"
                                     dur="2s" repeatCount="indefinite" />
                             </polygon>
                             <rect x="10" y="24" width="44" height="30" rx="2" ry="2" fill="#0077cc" />
@@ -212,11 +215,12 @@
                             <rect x="14" y="34" width="6" height="10" fill="#ffffff" />
                             <rect x="44" y="34" width="6" height="10" fill="#ffffff" />
                         </svg>
-                        <h3 class="mt-3">Limpieza Industrial</h3>
+                        <h3>Limpieza Industrial</h3>
                         <p>Tratamientos especiales para garajes, naves y grandes superficies.</p>
                         <button class="btn btn-outline-success mt-3" data-bs-toggle="modal"
-                            data-bs-target="#modalIndustrial" aria-label="Leer más sobre limpieza industrial">Leer
-                            más...</button>
+                            data-bs-target="#modalIndustrial" aria-label="Leer más sobre limpieza industrial">
+                            Leer más...
+                        </button>
                     </div>
                 </div>
 
@@ -224,21 +228,18 @@
         </div>
     </section>
 
-
     <!-- ===================== -->
     <!-- Sección Galería -->
     <!-- ===================== -->
-    <section id="galeria" class="py-5 bg-light" data-aos="fade-up" data-aos-delay="100">
+    <section id="galeria" class="py-5 bg-light section-animated">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;" data-aos="fade-up"
-                data-aos-delay="200">
-                Nuestra Galería
-            </h2>
+            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;">Nuestra Galería</h2>
             <div class="row g-4">
 
                 <!-- Imagen 1 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="300">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1" data-aos="zoom-in"
+                        data-aos-delay="0">
                         <img src="img/espaciosRelucientes.webp" class="card-img-top img-fluid gallery-click"
                             alt="Espacios relucientes" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/espaciosRelucientes.webp">
@@ -249,8 +250,9 @@
                 </div>
 
                 <!-- Imagen 2 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="400">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2" data-aos="fade-up"
+                        data-aos-delay="100">
                         <img src="img/ordenYLimpieza.webp" class="card-img-top img-fluid gallery-click"
                             alt="Orden y limpieza" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/ordenYLimpieza.webp">
@@ -261,8 +263,9 @@
                 </div>
 
                 <!-- Imagen 3 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="500">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3" data-aos="fade-right"
+                        data-aos-delay="200">
                         <img src="img/eficienciaGarantizada.webp" class="card-img-top img-fluid gallery-click"
                             alt="Eficiencia garantizada" tabindex="0" data-bs-toggle="modal"
                             data-bs-target="#imageModal" data-img="img/eficienciaGarantizada.webp">
@@ -273,8 +276,9 @@
                 </div>
 
                 <!-- Imagen 4 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="600">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4" data-aos="fade-left"
+                        data-aos-delay="300">
                         <img src="img/limpiezaprecisa.webp" class="card-img-top img-fluid gallery-click"
                             alt="Limpieza precisa" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/limpiezaprecisa.webp">
@@ -285,8 +289,9 @@
                 </div>
 
                 <!-- Imagen 5 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="700">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5" data-aos="zoom-in"
+                        data-aos-delay="400">
                         <img src="img/cuidadoMeticuloso.webp" class="card-img-top img-fluid gallery-click"
                             alt="Cuidado meticuloso" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/cuidadoMeticuloso.webp">
@@ -297,8 +302,9 @@
                 </div>
 
                 <!-- Imagen 6 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="800">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6" data-aos="fade-up"
+                        data-aos-delay="500">
                         <img src="img/EspaciosImpecables.webp" class="card-img-top img-fluid gallery-click"
                             alt="Espacios impecables" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/EspaciosImpecables.webp">
@@ -309,8 +315,9 @@
                 </div>
 
                 <!-- Imagen 7 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="900">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1" data-aos="fade-right"
+                        data-aos-delay="600">
                         <img src="img/solucionesEfectivas.webp" class="card-img-top img-fluid gallery-click"
                             alt="Soluciones efectivas" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/solucionesEfectivas.webp">
@@ -321,8 +328,9 @@
                 </div>
 
                 <!-- Imagen 8 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="1000">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2" data-aos="fade-left"
+                        data-aos-delay="700">
                         <img src="img/detallesCuidados.webp" class="card-img-top img-fluid gallery-click"
                             alt="Detalles cuidados" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/detallesCuidados.webp">
@@ -333,8 +341,9 @@
                 </div>
 
                 <!-- Imagen 9 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="1100">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3" data-aos="zoom-in"
+                        data-aos-delay="800">
                         <img src="img/higieneSuperior.webp" class="card-img-top img-fluid gallery-click"
                             alt="Higiene superior" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/higieneSuperior.webp">
@@ -345,8 +354,9 @@
                 </div>
 
                 <!-- Imagen 10 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="1200">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4" data-aos="fade-up"
+                        data-aos-delay="900">
                         <img src="img/excelenciaLimpieza.webp" class="card-img-top img-fluid gallery-click"
                             alt="Excelencia en limpieza" tabindex="0" data-bs-toggle="modal"
                             data-bs-target="#imageModal" data-img="img/excelenciaLimpieza.webp">
@@ -357,8 +367,9 @@
                 </div>
 
                 <!-- Imagen 11 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="1300">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5" data-aos="fade-right"
+                        data-aos-delay="1000">
                         <img src="img/ambientesPuros.webp" class="card-img-top img-fluid gallery-click"
                             alt="Ambientes puros" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/ambientesPuros.webp">
@@ -369,8 +380,9 @@
                 </div>
 
                 <!-- Imagen 12 -->
-                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="1400">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6" data-aos="fade-left"
+                        data-aos-delay="1100">
                         <img src="img/limpiezaGarajes.webp" class="card-img-top img-fluid gallery-click"
                             alt="Limpieza de Garajes" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/limpiezaGarajes.webp">
@@ -388,19 +400,18 @@
     <!-- ===================== -->
     <!-- Sección Acerca de -->
     <!-- ===================== -->
-    <section id="acerca" class="py-5 bg-success text-white text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">Acerca de Liansur</h2>
-            <p class="fs-5" data-aos="fade-up" data-aos-delay="300">
+    <section id="acerca" class="py-5 bg-success text-white text-center">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Acerca de Liansur</h2>
+            <p class="fs-5">
                 En Liansur nos especializamos en ofrecer soluciones integrales de limpieza profesional para hogares,
                 empresas e industrias. Nuestro equipo combina experiencia, compromiso y tecnología para garantizar
                 espacios impecables y saludables.
             </p>
-            <p class="fs-6 mt-3 fst-italic" data-aos="fade-up" data-aos-delay="400">"Cuidamos tu entorno como si fuera
-                el nuestro"</p>
+            <p class="fs-6 mt-3 fst-italic">"Cuidamos tu entorno como si fuera el nuestro"</p>
 
             <!-- Sello animado Canvas (script.js) -->
-            <div class="my-5" data-aos="zoom-in" data-aos-delay="500">
+            <div class="my-5">
                 <canvas id="selloGarantia" width="250" height="250"></canvas>
                 <p class="mt-2 fw-bold text-white">100% Limpieza Garantizada</p>
             </div>
@@ -410,13 +421,12 @@
     <!-- ===================== -->
     <!-- Sección Tarifas -->
     <!-- ===================== -->
-    <section id="tarifas" class="py-5 bg-light" data-aos="fade-up" data-aos-delay="100">
+    <section id="tarifas" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;" data-aos="fade-up"
-                data-aos-delay="200">
+            <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;">
                 <i class="fas fa-euro-sign me-2"></i>Tarifas de Servicios
             </h2>
-            <div class="table-responsive" data-aos="fade-up" data-aos-delay="300">
+            <div class="table-responsive" data-aos="fade-up">
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-success">
                         <tr>
@@ -460,28 +470,29 @@
     <!-- ===================== -->
     <!-- Sección Contacto -->
     <!-- ===================== -->
-    <section id="contacto" class="py-5 bg-light" data-aos="fade-up" data-aos-delay="100">
+    <section id="contacto" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">Contáctanos</h2>
-            <form>
+            <h2 class="text-center mb-5">Contáctanos</h2>
+            <form data-aos="fade-up">
+
                 <div class="row g-3">
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" required />
                     </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-6">
                         <label for="apellidos" class="form-label">Apellidos</label>
                         <input type="text" class="form-control" id="apellidos" required />
                     </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="col-md-6">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" required />
                     </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="col-md-6">
                         <label for="telefono" class="form-label">Teléfono</label>
                         <input type="tel" class="form-control" id="telefono" />
                     </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="col-md-6">
                         <label for="tipoServicio" class="form-label">Tipo de servicio</label>
                         <select id="tipoServicio" class="form-select">
                             <option>Limpieza general</option>
@@ -490,15 +501,15 @@
                             <option>Otro</option>
                         </select>
                     </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+                    <div class="col-md-6">
                         <label for="fecha" class="form-label">Fecha preferida</label>
                         <input type="date" class="form-control" id="fecha" />
                     </div>
-                    <div class="col-12" data-aos="fade-up" data-aos-delay="900">
+                    <div class="col-12">
                         <label for="mensaje" class="form-label">Mensaje</label>
                         <textarea class="form-control" id="mensaje" rows="4" required></textarea>
                     </div>
-                    <div class="col-12 text-center mt-3" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="col-12 text-center mt-3">
                         <button type="submit" class="btn btn-success px-5">Enviar</button>
                     </div>
                 </div>
@@ -509,7 +520,7 @@
     <!-- ===================== -->
     <!-- Footer -->
     <!-- ===================== -->
-    <footer class="bg-dark text-white text-center py-4" data-aos="fade-up" data-aos-delay="200">
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
             <p class="mb-1">&copy; 2025 Liansur - Todos los derechos reservados</p>
             <div class="mb-2">
@@ -520,7 +531,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- ===================== -->
     <!-- Modales de Servicio -->
@@ -653,24 +663,14 @@
     <!-- ===================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- Script para accesibilidad con teclado (añadir justo antes del </body>) -->
-    <script>
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.setAttribute('tabindex', '0'); // Asegura accesibilidad incluso si no está en HTML
-            img.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter') {
-                    img.click(); // Simula clic para abrir el modal
-                }
-            });
-        });
-    </script>
-    <!-- AOS JS -->
+
+    <!-- AOS JS (código de las animaciones) -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,
-            once: false,    // anima cada vez
-            mirror: true    // anima al entrar y al salir
+            duration: 800,     // duración en ms de las animaciones
+            once: false,       // si es true, solo anima una vez
+            mirror: true       // si es true, también anima al hacer scroll hacia arriba
         });
     </script>
 

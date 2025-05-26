@@ -21,11 +21,19 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- AOS CSS (estilos de las animaciones) -->
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+
+    <div id="preloader">
+        <div class="loader-text">Cargando...</div>
+    </div>
+
     <a id="inicio"></a> <!-- Punto de anclaje superior -->
 
     <!-- ===================== -->
@@ -95,7 +103,7 @@
         <!-- Overlay con mensaje -->
         <div
             class="hero-overlay position-absolute top-0 start-0 w-100 h-100 z-2 d-flex align-items-center justify-content-center text-center">
-            <p id="mensajeUnico" class="display-1 fw-bold text-uppercase text-white animate__animated d-none"
+            <p id="mensajeUnico" class="display-2 fw-bold text-uppercase text-white animate__animated d-none"
                 style="text-shadow: 0 0 30px #000; letter-spacing: 5px;"></p>
         </div>
     </header>
@@ -112,7 +120,7 @@
 
                 <!-- General Cleaning -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card text-center">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg width="80" height="80" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                             aria-label="Animated mop" role="img">
                             <title>Cleaning mop</title>
@@ -135,7 +143,7 @@
 
                 <!-- Disinfection -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card text-center">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                             aria-label="Animated spray" role="img">
                             <title>Cleaning spray</title>
@@ -167,7 +175,7 @@
 
                 <!-- Garden Maintenance -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card text-center">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
                             aria-label="Animated blue flower" role="img" class="animated-flower">
                             <g transform="rotate(0 32 32)">
@@ -198,7 +206,7 @@
 
                 <!-- Industrial Cleaning -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card text-center">
+                    <div class="service-card text-center" data-aos="zoom-in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
                             aria-label="Animated industrial building" role="img" class="mb-2">
                             <!-- Techo animado -->
@@ -227,8 +235,9 @@
         </div>
     </section>
 
+ 
     <!-- ===================== -->
-    <!-- Sección Galería -->
+    <!-- Gallery Section -->
     <!-- ===================== -->
     <section id="galeria" class="py-5 bg-light section-animated">
         <div class="container">
@@ -236,7 +245,8 @@
             <div class="row g-4">
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1" data-aos="zoom-in"
+                        data-aos-delay="0">
                         <img src="img/espaciosRelucientes.webp" class="card-img-top img-fluid gallery-click"
                             alt="Shiny and cozy spaces" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/espaciosRelucientes.webp">
@@ -247,7 +257,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2" data-aos="fade-up"
+                        data-aos-delay="100">
                         <img src="img/ordenYLimpieza.webp" class="card-img-top img-fluid gallery-click"
                             alt="Order and cleanliness" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/ordenYLimpieza.webp">
@@ -258,7 +269,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3" data-aos="fade-right"
+                        data-aos-delay="200">
                         <img src="img/eficienciaGarantizada.webp" class="card-img-top img-fluid gallery-click"
                             alt="Guaranteed efficiency" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/eficienciaGarantizada.webp">
@@ -269,7 +281,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4" data-aos="fade-left"
+                        data-aos-delay="300">
                         <img src="img/limpiezaprecisa.webp" class="card-img-top img-fluid gallery-click"
                             alt="Precise cleaning" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/limpiezaprecisa.webp">
@@ -280,7 +293,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5" data-aos="zoom-in"
+                        data-aos-delay="400">
                         <img src="img/cuidadoMeticuloso.webp" class="card-img-top img-fluid gallery-click"
                             alt="Meticulous care" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/cuidadoMeticuloso.webp">
@@ -291,7 +305,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6" data-aos="fade-up"
+                        data-aos-delay="500">
                         <img src="img/EspaciosImpecables.webp" class="card-img-top img-fluid gallery-click"
                             alt="Impeccable spaces" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/EspaciosImpecables.webp">
@@ -302,7 +317,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-1">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-1" data-aos="fade-right"
+                        data-aos-delay="600">
                         <img src="img/solucionesEfectivas.webp" class="card-img-top img-fluid gallery-click"
                             alt="Effective solutions" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/solucionesEfectivas.webp">
@@ -313,7 +329,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-2">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-2" data-aos="fade-left"
+                        data-aos-delay="700">
                         <img src="img/detallesCuidados.webp" class="card-img-top img-fluid gallery-click"
                             alt="Carefully attended details" tabindex="0" data-bs-toggle="modal"
                             data-bs-target="#imageModal" data-img="img/detallesCuidados.webp">
@@ -324,7 +341,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-3">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-3" data-aos="zoom-in"
+                        data-aos-delay="800">
                         <img src="img/higieneSuperior.webp" class="card-img-top img-fluid gallery-click"
                             alt="Superior hygiene" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/higieneSuperior.webp">
@@ -335,7 +353,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-4">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-4" data-aos="fade-up"
+                        data-aos-delay="900">
                         <img src="img/excelenciaLimpieza.webp" class="card-img-top img-fluid gallery-click"
                             alt="Excellence in industrial cleaning" tabindex="0" data-bs-toggle="modal"
                             data-bs-target="#imageModal" data-img="img/excelenciaLimpieza.webp">
@@ -346,7 +365,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-5">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-5" data-aos="fade-right"
+                        data-aos-delay="1000">
                         <img src="img/ambientesPuros.webp" class="card-img-top img-fluid gallery-click"
                             alt="Pure and healthy environments" tabindex="0" data-bs-toggle="modal"
                             data-bs-target="#imageModal" data-img="img/ambientesPuros.webp">
@@ -357,7 +377,8 @@
                 </div>
 
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card border-0 shadow-sm gallery-item bg-variant-6">
+                    <div class="card border-0 shadow-sm gallery-item bg-variant-6" data-aos="fade-left"
+                        data-aos-delay="1100">
                         <img src="img/limpiezaGarajes.webp" class="card-img-top img-fluid gallery-click"
                             alt="Garage cleaning" tabindex="0" data-bs-toggle="modal" data-bs-target="#imageModal"
                             data-img="img/limpiezaGarajes.webp">
@@ -372,11 +393,12 @@
     </section>
 
 
+
     <!-- ===================== -->
     <!-- Sección Acerca de -->
     <!-- ===================== -->
     <section id="acerca" class="py-5 bg-success text-white text-center">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <h2 class="text-center mb-5">About Liansur</h2>
             <p class="fs-5">
                 At Liansur, we specialize in providing comprehensive professional cleaning solutions for homes,
@@ -402,7 +424,7 @@
             <h2 class="fw-bold text-center mb-5" style="font-size: 2.8rem; color: #0077cc;">
                 <i class="fas fa-euro-sign me-2"></i>Service Rates
             </h2>
-            <div class="table-responsive animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="table-responsive" data-aos="fade-up">
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-success">
                         <tr>
@@ -449,7 +471,7 @@
     <section id="contacto" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Contact Us</h2>
-            <form>
+            <form data-aos="fade-up">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">First Name</label>
@@ -637,17 +659,17 @@
     <!-- ===================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script2.js"></script>
-    <!-- Script for keyboard accessibility -->
+
+    <!-- AOS JS (código de las animaciones) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.setAttribute('tabindex', '0');
-            img.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter') {
-                    img.click();
-                }
-            });
+        AOS.init({
+            duration: 800,     // duración en ms de las animaciones
+            once: false,       // si es true, solo anima una vez
+            mirror: true       // si es true, también anima al hacer scroll hacia arriba
         });
     </script>
+
 </body>
 
 </html>

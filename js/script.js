@@ -1,3 +1,6 @@
+// ===============================
+// 0. PRELOADER (pantalla de carga)
+// ===============================
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
   preloader.style.opacity = "0";
@@ -8,17 +11,13 @@ window.addEventListener("load", function () {
 });
 
 // ===============================
-// 1. CONTROL DE VIDEO HERO (Mute/Play)
-// ===============================
-// ===============================
-// VIDEO HERO: Intenta reproducir con sonido, botón para silenciar
+// 1. VIDEO HERO (Mute/Play y activación por clic)
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
-  // ==== 1. CONTROL DE VIDEO HERO (BOTÓN CIRCULAR ADAPTADO) ====
   const videoDesktop = document.querySelector(".video-desktop");
   const videoMobile = document.querySelector(".video-mobile");
   const muteBtn = document.getElementById("toggleMuteBtn");
-  const icono = muteBtn.querySelector("i"); // Icono FontAwesome dentro del botón
+  const icono = muteBtn.querySelector("i");
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const video = isMobile ? videoMobile : videoDesktop;
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Primer clic en cualquier parte activa sonido (excepto si es sobre el botón)
     const activarSonido = () => {
       video.muted = false;
       icono.classList.replace("fa-volume-up", "fa-volume-mute");
@@ -42,9 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("click", activarSonido);
 
-    // Al hacer clic en el botón, se alterna el mute
     muteBtn.addEventListener("click", function (e) {
-      e.stopPropagation(); // evitar que dispare el document click
+      e.stopPropagation();
       video.muted = !video.muted;
 
       if (video.muted) {
@@ -54,11 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Estado inicial del icono
     icono.classList.add("fa-volume-up");
   }
 
-  // ==== 2. MENSAJES IMPACTANTES EN BUCLE ====
+  // ===============================
+  // 2. MENSAJES ANIMADOS EN BUCLE
+  // ===============================
   const mensajes = [
     "Transforma tu espacio",
     "Desinfección efectiva",
@@ -84,13 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         mensajeUnico.classList.add("d-none");
         index++;
-
-        if (index >= mensajes.length) {
-          index = 0;
-          setTimeout(mostrarSiguienteMensaje, 4000);
-        } else {
-          mostrarSiguienteMensaje();
-        }
+        if (index >= mensajes.length) index = 0;
+        setTimeout(mostrarSiguienteMensaje, 4000);
       }, 2000);
     }, 4000);
   }
@@ -99,42 +92,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ===============================
-// 5. Cerrar navbar en móviles al hacer clic en un enlace
-// ===============================
-document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
-  link.addEventListener("click", function () {
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-    if (bsCollapse) {
-      bsCollapse.hide();
-    }
-  });
-});
-
-// ===============================
-// 2. SCROLL SUAVE PARA ANCLAS DEL MENÚ
+// 3. SCROLL SUAVE EN MENÚ ANCLA
 // ===============================
 document.querySelectorAll("a.nav-link").forEach((link) => {
   link.addEventListener("click", function (e) {
     if (this.hash !== "") {
       e.preventDefault();
       const target = document.querySelector(this.hash);
-      const yOffset = -100; // Ajuste para navbar fija
-      const y =
-        target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const yOffset = -100;
+      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   });
 });
 
 // ===============================
-// 3. MODAL DE IMÁGENES (Galería con Zoom)
+// 4. CERRAR MENÚ EN MÓVIL TRAS CLIC
+// ===============================
+document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
+  link.addEventListener("click", function () {
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse) bsCollapse.hide();
+  });
+});
+
+// ===============================
+// 5. MODAL DE IMÁGENES EN GALERÍA
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
   const modalImage = document.getElementById("modalImage");
   const galleryImages = document.querySelectorAll(".gallery-click");
 
-  // Cada imagen al hacer clic carga su versión en grande en el modal
   galleryImages.forEach((img) => {
     img.addEventListener("click", () => {
       const imgSrc = img.getAttribute("data-img");
@@ -144,7 +133,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ===============================
-// 4. CANVAS: SELLO ANIMADO 100% GARANTÍA
+// 6. ACCESIBILIDAD CON TECLADO EN GALERÍA
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        img.click();
+      }
+    });
+  });
+});
+
+// ===============================
+// 7. SELLO ANIMADO CON CANVAS
 // ===============================
 const canvas = document.getElementById("selloGarantia");
 if (canvas) {
@@ -156,51 +159,25 @@ if (canvas) {
     const h = canvas.height;
     const centerX = w / 2;
     const centerY = h / 2;
-
-    // Detectar si el body tiene clase tema-oscuro
     const isDarkMode = document.body.classList.contains("tema-oscuro");
 
-    // === MODO CLARO ===
-    const colorBordeClaro = "#ffffff";
-    const colorTextoClaro = "#ffffff";
-    const sombraBordeClaro = "#ffffff";
-    const sombraAnimadoClaro = "#81c784"; // verde original
-    const fondoClaro = "radial-gradient(circle, #c8e6c9 0%, #a5d6a7 100%)";
+    const colorBorde = isDarkMode ? "#66ccff" : "#ffffff";
+    const colorTexto = isDarkMode ? "#eeeeee" : "#ffffff";
+    const sombraBorde = isDarkMode ? "#66ccff" : "#ffffff";
+    const sombraAnimado = isDarkMode ? "#66ccff" : "#81c784";
 
-    // === MODO OSCURO ===
-    const colorBordeOscuro = "#66ccff";
-    const colorTextoOscuro = "#eeeeee";
-    const sombraBordeOscuro = "#66ccff";
-    const sombraAnimadoOscuro = "#66ccff";
-    const fondoOscuro = "#1a1a1a";
-
-    // Limpiar fondo (modo claro: simular gradiente manualmente)
-    if (isDarkMode) {
-      ctx.fillStyle = fondoOscuro;
-      ctx.fillRect(0, 0, w, h);
-    } else {
-      // Gradiente radial manual
-      const gradient = ctx.createRadialGradient(
-        centerX,
-        centerY,
-        20,
-        centerX,
-        centerY,
-        120
-      );
+    ctx.clearRect(0, 0, w, h);
+    if (!isDarkMode) {
+      const gradient = ctx.createRadialGradient(centerX, centerY, 20, centerX, centerY, 120);
       gradient.addColorStop(0, "#c8e6c9");
       gradient.addColorStop(1, "#a5d6a7");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, w, h);
+    } else {
+      ctx.fillStyle = "#1a1a1a";
+      ctx.fillRect(0, 0, w, h);
     }
 
-    // Colores actuales según el tema
-    const colorBorde = isDarkMode ? colorBordeOscuro : colorBordeClaro;
-    const colorTexto = isDarkMode ? colorTextoOscuro : colorTextoClaro;
-    const sombraBorde = isDarkMode ? sombraBordeOscuro : sombraBordeClaro;
-    const sombraAnimado = isDarkMode ? sombraAnimadoOscuro : sombraAnimadoClaro;
-
-    // Círculo exterior
     ctx.beginPath();
     ctx.arc(centerX, centerY, 100, 0, 2 * Math.PI);
     ctx.strokeStyle = colorBorde;
@@ -210,14 +187,12 @@ if (canvas) {
     ctx.stroke();
     ctx.shadowBlur = 0;
 
-    // Texto
     ctx.font = "bold 20px Poppins";
     ctx.fillStyle = colorTexto;
     ctx.textAlign = "center";
     ctx.fillText("100% Limpieza", centerX, centerY - 10);
     ctx.fillText("Garantizada", centerX, centerY + 20);
 
-    // Círculo interior animado
     ctx.save();
     ctx.translate(centerX, centerY);
     ctx.rotate(angle);
@@ -238,13 +213,12 @@ if (canvas) {
 }
 
 // ===============================
-// 6. Cambiar tema claro/oscuro
+// 8. CAMBIAR TEMA CLARO / OSCURO
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.getElementById("temaToggleBtn");
   const body = document.body;
 
-  // Cargar preferencia si existe
   if (localStorage.getItem("tema") === "oscuro") {
     body.classList.add("tema-oscuro");
     toggleBtn.textContent = "☀️ Modo claro";
@@ -252,7 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("tema-oscuro");
-
     if (body.classList.contains("tema-oscuro")) {
       toggleBtn.textContent = "☀️ Modo claro";
       localStorage.setItem("tema", "oscuro");
@@ -263,16 +236,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ===============================
+// 9. BOTÓN VOLVER ARRIBA (desaparece tras scroll)
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btnScrollTop");
   let timeout;
 
   window.addEventListener("scroll", function () {
-    // Si scroll mayor a 300px, mostrar
     if (window.scrollY > 300) {
       btn.style.display = "flex";
-
-      // Reinicia temporizador si hay scroll
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         btn.style.display = "none";
@@ -283,12 +256,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ===============================
+// 10. BOTÓN WHATSAPP (visible al hacer scroll)
+// ===============================
 const btnWhatsApp = document.getElementById("btnWhatsApp");
 let hideTimeout;
 
 window.addEventListener("scroll", () => {
   btnWhatsApp.style.display = "flex";
-
   clearTimeout(hideTimeout);
   hideTimeout = setTimeout(() => {
     btnWhatsApp.style.display = "none";

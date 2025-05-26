@@ -20,12 +20,28 @@
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    
     <!-- AOS CSS (estilos de las animaciones) -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+        }
+
+        [data-aos] {
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .navbar {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -235,7 +251,7 @@
         </div>
     </section>
 
- 
+
     <!-- ===================== -->
     <!-- Gallery Section -->
     <!-- ===================== -->
